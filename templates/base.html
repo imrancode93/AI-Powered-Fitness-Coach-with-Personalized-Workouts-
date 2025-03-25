@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Fitness Coach</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>AI-Powered Fitness Coach 💪</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/register">Register</a>
+      <a href="/workout">Get Workout</a>
+      <a href="/chat">Chat</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

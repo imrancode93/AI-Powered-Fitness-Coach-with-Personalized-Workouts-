@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h2>Chat with your AI Fitness Coach 🤖</h2>
+
+  <form method="post">
+    <input type="text" name="user_input" placeholder="Ask your coach..." required>
+    <button type="submit" class="btn">Send</button>
+    <a href="/reset_chat" class="btn danger">Clear Chat</a>
+  </form>
+
+  <div class="chat-box">
+    {% for msg in chat_history %}
+      <div class="chat-message {{ msg.role }}">
+        {% if msg.role == 'user' %}
+          <p><strong>🧍 You:</strong> {{ msg.text }}</p>
+        {% else %}
+          <p><strong>🤖 Coach:</strong> {{ msg.text }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  window.onload = function () {
+    const box = document.querySelector(".chat-box");
+    if (box) {
+      box.scrollTop = box.scrollHeight;
+    }
+  };
+</script>
+{% endblock %}
+

@@ -1,8 +1,7 @@
 import logging
 
-# Configure logging
 logging.basicConfig(
-    filename="app.log", 
+    filename="app.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
@@ -15,5 +14,3 @@ def log_message(message, level="info"):
     elif level == "error":
         logging.error(message)
 
-# Example usage
-log_message("AI Fitness App initialized successfully!")
